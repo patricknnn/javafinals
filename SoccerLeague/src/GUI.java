@@ -13,8 +13,19 @@ public class GUI {
     private JButton leagueWinner;
     private JButton showLeagueResults;
     private JButton initializeLeague;
+    private Boolean initialized = false;
 
     private GUI() {
+        initializeLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                m.initialize();
+                initialized = true;
+                initializeLeague.setEnabled(false);
+                leagueWinner.setEnabled(true);
+                showLeagueResults.setEnabled(true);
+            }
+        });
         leagueWinner.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -27,12 +38,14 @@ public class GUI {
                 JOptionPane.showMessageDialog(null, m.showSingleLeagueResults());
             }
         });
-        initializeLeague.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                m.initialize();
-            }
-        });
+
+        if (!this.initialized) {
+            leagueWinner.setEnabled(false);
+            showLeagueResults.setEnabled(false);
+        } else {
+            leagueWinner.setEnabled(true);
+            showLeagueResults.setEnabled(true);
+        }
     }
 
     /**
