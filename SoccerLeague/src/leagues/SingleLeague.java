@@ -3,9 +3,6 @@ package leagues;
 import interfaces.Schedule;
 import schedules.SingleSchedule;
 
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * Single league
  * @author Patrick Niewold
@@ -49,8 +46,8 @@ public class SingleLeague extends League {
             } else if (t.getPoints().equals(highest)) {
                 try {
                     assert winner != null;
-                    Integer ds_t = t.getPlusGoals() - t.getMinGoals();
-                    Integer ds_w = winner.getPlusGoals() - winner.getMinGoals();
+                    int ds_t = t.getPlusGoals() - t.getMinGoals();
+                    int ds_w = winner.getPlusGoals() - winner.getMinGoals();
                     if (ds_t > ds_w) {
                         highest = t.getPoints();
                         winner = t;

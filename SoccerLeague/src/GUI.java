@@ -13,6 +13,10 @@ public class GUI {
     private JButton leagueWinner;
     private JButton showLeagueResults;
     private JButton initializeLeague;
+    private JButton showScoreAjaxButton;
+    private JButton showPlusgoalsADOButton;
+    private JButton showMingoalsPSVButton;
+    private JButton showDoelsaldoVVVButton;
     private Boolean initialized = false;
 
     private GUI() {
@@ -24,6 +28,10 @@ public class GUI {
                 initializeLeague.setEnabled(false);
                 leagueWinner.setEnabled(true);
                 showLeagueResults.setEnabled(true);
+                showScoreAjaxButton.setEnabled(true);
+                showPlusgoalsADOButton.setEnabled(true);
+                showMingoalsPSVButton.setEnabled(true);
+                showDoelsaldoVVVButton.setEnabled(true);
             }
         });
         leagueWinner.addActionListener(new ActionListener() {
@@ -39,12 +47,45 @@ public class GUI {
             }
         });
 
+        showScoreAjaxButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(null, m.getAjaxScore());
+            }
+        });
+        showPlusgoalsADOButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(null, m.getAdoGoalsPlus());
+            }
+        });
+        showMingoalsPSVButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(null, m.getPsvGoalsMin());
+            }
+        });
+        showDoelsaldoVVVButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(null, m.getVvvDoelsaldo());
+            }
+        });
+
         if (!this.initialized) {
             leagueWinner.setEnabled(false);
             showLeagueResults.setEnabled(false);
+            showScoreAjaxButton.setEnabled(false);
+            showPlusgoalsADOButton.setEnabled(false);
+            showMingoalsPSVButton.setEnabled(false);
+            showDoelsaldoVVVButton.setEnabled(false);
         } else {
             leagueWinner.setEnabled(true);
             showLeagueResults.setEnabled(true);
+            showScoreAjaxButton.setEnabled(true);
+            showPlusgoalsADOButton.setEnabled(true);
+            showMingoalsPSVButton.setEnabled(true);
+            showDoelsaldoVVVButton.setEnabled(true);
         }
     }
 
