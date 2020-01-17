@@ -79,9 +79,16 @@ public class Main {
         singleLeague.addMatch(new Match(psv, vvv, 3, 2, psv_vvv));
     }
 
-    public String Test() {
+    public void initialize() {
         singleLeague.generateSchedule();
         singleLeague.processMatches();
+    }
+
+    public String showSingleLeagueWinner() {
+        return singleLeague.getWinner().getTeamName();
+    }
+
+    public String showSingleLeagueResults() {
         return singleLeague.getResultTable().getResults();
     }
 }

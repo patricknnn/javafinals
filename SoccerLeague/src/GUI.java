@@ -10,13 +10,27 @@ import java.awt.event.ActionListener;
 public class GUI {
     private JPanel panelMain;
     private Main m = new Main();
-    private JButton Test;
+    private JButton leagueWinner;
+    private JButton showLeagueResults;
+    private JButton initializeLeague;
 
     private GUI() {
-        Test.addActionListener(new ActionListener() {
+        leagueWinner.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JOptionPane.showMessageDialog(null, m.Test());
+                JOptionPane.showMessageDialog(null, m.showSingleLeagueWinner());
+            }
+        });
+        showLeagueResults.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(null, m.showSingleLeagueResults());
+            }
+        });
+        initializeLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                m.initialize();
             }
         });
     }
