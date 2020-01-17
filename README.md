@@ -2,4 +2,4 @@
 Java Finals soccerleague
 
 # TODO:
-- Unit tests
+- Double league
