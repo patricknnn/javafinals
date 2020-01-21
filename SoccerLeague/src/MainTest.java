@@ -1,4 +1,7 @@
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -7,35 +10,36 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  */
 class MainTest {
-    Main m = new Main();
+    private Main m;
 
-    @org.junit.jupiter.api.Test
-    void showSingleLeagueWinner() {
+    @BeforeEach
+    void BeforeAll() {
+        this.m = new Main();
         m.initialize();
+    }
+
+    @Test
+    void showSingleLeagueWinner() {
         assertEquals("Ajax", m.showSingleLeagueWinner());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getAjaxScore() {
-        m.initialize();
         assertEquals(9, m.getAjaxScore());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getAdoGoalsPlus() {
-        m.initialize();
         assertEquals(6, m.getAdoGoalsPlus());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getPsvGoalsMin() {
-        m.initialize();
         assertEquals(7, m.getPsvGoalsMin());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getVvvDoelsaldo() {
-        m.initialize();
         assertEquals(-5, m.getVvvDoelsaldo());
     }
 }

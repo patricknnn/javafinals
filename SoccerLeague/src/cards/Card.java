@@ -20,7 +20,7 @@ public abstract class Card {
 
     /**
      * Returns the team the card belongs to
-     * @return
+     * @return Team
      */
     public Team getTeam() {
         return this.team;
